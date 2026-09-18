@@ -1,0 +1,90 @@
+# label: str, name displayed on tui
+# key: Optional[str], single-char shortcut, e.g. "b"
+# command: Optional[str], shell command to run
+# option: Optional[str], how the command shall be run: embedded, embedded-blocking, detach-console, detach-no-console
+# submenu: Optional[List["Item"]]
+
+title: " Home"
+
+items:
+  - label: "System"
+    key: "0"
+    submenu:
+      - label: "Screen brightness +10%"
+        key: "0"
+        command: "python scripts/screen.py 10"
+        option: embedded
+
+      - label: "Screen brightness -10%"
+        key: "1"
+        command: "python scripts/screen.py -10"
+        option: embedded
+
+      - label: "Lock screen"
+        key: "2"
+        command: "rundll32.exe user32.dll,LockWorkStation"
+        option: detach-no-console
+
+      - label: "Restart"
+        key: "3"
+        command: "shutdown /r /t 0"
+        option: detach-no-console
+
+      - label: "Shutdown"
+        key: "4"
+        command: "shutdown /s /t 0"
+        option: detach-no-console
+
+
+  - label: "Apps"
+    key: "1"
+    submenu:
+      - label: "Calculator"
+        key: "0"
+        command: 'calc'
+        option: detach-no-console
+
+      - label: "Terminal"
+        key: "1"
+        command: 'start cmd'
+        option: detach-no-console
+
+
+  - label: "Menu example"
+    key: "2"
+    submenu:
+      - label: "a"
+        key: "a"
+        command: ""
+        option: detach-no-console
+      
+      - label: "b"
+        key: "b"
+        command: ""
+        option: detach-no-console
+
+      - label: "c"
+        key: "c"
+        command: ""
+        option: detach-no-console
+
+      - label: "d"
+        key: "d"
+        command: ""
+        option: detach-no-console
+
+      - label: "Sub menu example"
+        key: "e"
+        command: ""
+        option: detach-no-console
+        submenu:
+          - label: "a"
+            key: "0"
+            command: ""
+            option: detach-no-console
+          
+          - label: "b"
+            key: "1"
+            command: ""
+            option: detach-no-console
+ 
