@@ -1,0 +1,3 @@
+pyyaml
+windows-curses; platform_system == "Windows"
+screen-brightness-control; platform_system == "Windows"
